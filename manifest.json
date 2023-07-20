@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "PetPlugin",
+    "description": "ChatPet的Chrome插件，为您带来更好的AI体验。欢迎体验网页版：www.chatpet.top",
+    "version": "1.0",
+    "options_page": "options.html",
+    "permissions": [
+        "storage",
+        "contextMenus",
+        "tabs",
+        "tts",
+        "windows",
+        "runtime",
+        "notifications",
+        "http://*/*",
+        "https://*/*",
+        "ws://*/"
+    ],
+    "background": {
+        "scripts": ["./js/background.js"]
+    },
+    "browser_action": {
+        "default_title": "PetPlugin",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "./img/chatpet16.png",
+        "32": "./img/chatpet32.png",
+        "48": "./img/chatpet48.png",
+        "128": "./img/chatpet128.png"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": ["https://*/*","http://*/*"],
+            "exclude_matches": ["*://www.chatpet.top/*"],
+            "css": ["css/contentCss.css"],
+            "js": ["js/jquery.js", "js/contentJs.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        "main.html"
+    ],
+    "homepage_url": "https://www.chatpet.top"
+}

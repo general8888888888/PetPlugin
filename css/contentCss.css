@@ -1,0 +1,42 @@
+:root {
+	  --color-type: #3D4554;
+	}
+
+#cj_move_page{
+    width: 430px;
+    height: 700px;
+    user-select: none;
+    background-color: var(--color-type);
+    border: var(--color-type) 1px solid;
+    border-radius: 20px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1000000;
+}
+
+#cj_move_item{
+    width: 100%;
+    height: 93%;
+    border: none;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1000001;
+}
+
+#cj_move_h3{
+    text-align: center;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    color: #ffffff;
+    cursor: move;
+}
